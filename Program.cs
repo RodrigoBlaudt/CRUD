@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 
-public ref struct data
+struct data
 {
     public int id;
     public string user;
@@ -20,11 +18,12 @@ namespace teste
         {
             // C.R.U.D.
             int n = 1;
-            //var Users = new List<string>() {null};
-            //string User = "";
-            data d;
-            //d.id = 1;
-            d.user = "";
+            string[] nomes;
+            nomes = new string[5000];
+            int cont = 0;
+
+            //data d;           /STRUCT
+            //d.user = "R";     /STRUCT
         
             Console.WriteLine("\n\n - Menu - \n\n");
             Console.WriteLine("1.Acessar o opções\n0.Sair\n");
@@ -42,104 +41,51 @@ namespace teste
                         switch(n)
                         {
                             case 1: // Inserir função CREATE
+                                Console.WriteLine("Quantos usuários irá cadastrar?");
+                                cont = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Digite o nome de Usuário");
-                                d.user = Console.ReadLine();
-                            break;
-                
-                            case 2: // Inserir função READ (Consulta)
-                                {   
-                                    if(String.IsNullOrEmpty(d.user))
-                                    {
-                                        Console.WriteLine("Vazio!\n\n");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine(d.user);
-                                    }   
-                                        Console.WriteLine("1.Voltar o menu\n0.Sair");
-                                        n = Convert.ToInt32(Console.ReadLine());
-                            break;
+                                for (int i = 0; i < cont; i++)
+                                {
+                                    nomes[i] = Console.ReadLine();
                                 }
+                            break;
+
+                            case 2: // Inserir função READ (Consulta)   
+                                if(String.IsNullOrEmpty(nomes[1]))
+                                {
+                                    Console.WriteLine("Vazio!\n\n");
+                                }
+                                else
+                                {
+                                    for(int i = 0; i < cont; i++)
+                                    {
+                                        Console.WriteLine($"ID: {i}, Usuário: {nomes[i]}");
+                                    }
+                                }
+                                    Console.WriteLine("1.Voltar o menu\n0.Sair");
+                                    n = Convert.ToInt32(Console.ReadLine());
+                                    break;
                             
                             case 3: // Inserir função update
-                                {
-                                    Console.Write("Opção 3\n\n");
-                                    Console.WriteLine("1.Voltar o menu\n0.Sair");
-                                    n = Convert.ToInt32(Console.ReadLine());
-                                }
-                            break;
+                                Console.Write("Opção 3\n\n");
+                                Console.WriteLine("1.Voltar ao menu\n0.Sair");
+                                n = Convert.ToInt32(Console.ReadLine());
+                                break;
                             
                             case 4: // Inserir função delete
-                                {
-                                    Console.Write("Opção 4\n\n");
-                                    Console.WriteLine("1.Voltar o menu\n0.Sair");
-                                    n = Convert.ToInt32(Console.ReadLine());
-                                }
-                            break;
+                                Console.Write("Opção 4\n\n");
+                                Console.WriteLine("1.Voltar o menu\n0.Sair");
+                                n = Convert.ToInt32(Console.ReadLine());
+                                break;
 
                             default:
                                 Console.WriteLine("1.Acessar opções\n0.Sair");
                                 n = Convert.ToInt32(Console.ReadLine());
-                            break;
+                                break;
+                            }
                         }
                     }
                 }
             }
-        }   
-    }       
-}           
-                
-                /*switch (caseSwitch)
-                {
-                    case 1:
-                        break;
-
-
-                    case 2:
-                        Console.WriteLine("Digite o nome de Usuário");
-                        Usaa = Console.ReadLine();
-                        break;
-
-                    case 3:
-                        if (String.IsNullOrEmpty(Users[0]))
-                            {
-                                Console.WriteLine("Vazio!");
-                            }
-                        else
-                        {
-                            Console.WriteLine("Read: Usuários cadastrados");
-                            foreach (string User in Users)
-                            {
-                                Console.WriteLine($"id: {id} | user: {User}");
-                            }
-                            Console.WriteLine(Users);
-                        }
-                        break;
-
-                    case 4:
-                        Console.WriteLine("Update");
-                        if (caseSwitch == 4)
-                        {
-                            Console.WriteLine("Delete");
-                        }
-                        break;
-
-                    case 5:
-                        Console.WriteLine("Exit");
-                        Environment.Exit(0);
-                        break;
-                
-                    default:
-                        Console.WriteLine("END");
-                        break;
-                    }
-                else
-                {
-                Console.WriteLine("Erro! Selecione uma opção válida:\n");
-                Console.WriteLine("1.Acessar o menu\n0.Sair");
-                n = Convert.ToInt32(Console.ReadLine());
-                }
-        }       
+        }
     }
-}
-        */

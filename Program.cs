@@ -33,7 +33,7 @@ namespace teste
                         Console.WriteLine("Read: Usuários cadastrados");
                         foreach (string User in Users)
                         {
-                            Console.WriteLine($"id: {id} | user: {Users[1]}");
+                            Console.WriteLine($"id: {id} | user: {User}");
                         }
                         Console.WriteLine(Users);
                     }

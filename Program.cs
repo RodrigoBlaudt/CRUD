@@ -18,9 +18,11 @@ namespace teste
         {
             // C.R.U.D.
             int n = 1;
+            int[] id;
+            id = new int[5000];
             string[] nomes;
             nomes = new string[5000];
-            int cont = 0;
+            int cont = 1;
 
             //data d;           /STRUCT
             //d.user = "R";     /STRUCT
@@ -41,12 +43,13 @@ namespace teste
                         switch(n)
                         {
                             case 1: // Inserir função CREATE
-                                Console.WriteLine("Quantos usuários irá cadastrar?");
-                                cont = Convert.ToInt32(Console.ReadLine());
+
                                 Console.WriteLine("Digite o nome de Usuário");
-                                for (int i = 0; i < cont; i++)
+                                if (cont < 5)
                                 {
-                                    nomes[i] = Console.ReadLine();
+                                    nomes[cont] = Console.ReadLine();
+                                    id[cont] = cont;
+                                    cont++;
                                 }
                             break;
 
@@ -57,9 +60,9 @@ namespace teste
                                 }
                                 else
                                 {
-                                    for(int i = 0; i < cont; i++)
+                                    for(int i = 1; i < cont; i++)
                                     {
-                                        Console.WriteLine($"ID: {i}, Usuário: {nomes[i]}");
+                                        Console.WriteLine($"ID: {id[i]}, Usuário: {nomes[i]}");
                                     }
                                 }
                                     Console.WriteLine("1.Voltar o menu\n0.Sair");
@@ -67,13 +70,45 @@ namespace teste
                                     break;
                             
                             case 3: // Inserir função update
-                                Console.Write("Opção 3\n\n");
+                                if(String.IsNullOrEmpty(nomes[1]))
+                                {
+                                    Console.WriteLine("Vazio!\n\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Qual id deseja atualizar?");
+                                    int update = Convert.ToInt32(Console.ReadLine());
+                                    for(int i = 1; i <= update; i++)
+                                    {
+                                        if(id[i] == update)
+                                        {
+                                            Console.WriteLine("Digite novo nome de usuário: ");
+                                            nomes[update] = Console.ReadLine();
+                                            Console.WriteLine("\n\nAtualizado com sucesso!\n\n");
+                                        }
+                                    }
+                                }
                                 Console.WriteLine("1.Voltar ao menu\n0.Sair");
                                 n = Convert.ToInt32(Console.ReadLine());
                                 break;
                             
                             case 4: // Inserir função delete
-                                Console.Write("Opção 4\n\n");
+                                Console.WriteLine("Qual ID deseja remover?");
+                                int id_remove = Convert.ToInt32(Console.ReadLine());
+                                /*if (id > 0)
+                                {
+                                    for (int i = 0; i < id; i++)
+                                    {
+                                        if (id == id_remove)
+                                        {
+                                            for (int j = i; j < id;j++)
+                                            {
+                                                //id[j] = id[j+1];
+                                            }
+                                        id--;
+                                        }
+                                    }
+                                }*/
                                 Console.WriteLine("1.Voltar o menu\n0.Sair");
                                 n = Convert.ToInt32(Console.ReadLine());
                                 break;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 struct data
 {
@@ -10,6 +11,7 @@ struct data
     }
 }
 
+
 namespace teste
 {
     class Program
@@ -20,6 +22,11 @@ namespace teste
             int n = 1;
             int[] id;
             id = new int[5000];
+            //var id = new List<int>();
+
+            //int[] numbers = {1, 3, 4, 9, 2};
+            //var numbersList = numbers.ToList();
+
             string[] nomes;
             nomes = new string[5000];
             int cont = 1;
@@ -93,7 +100,7 @@ namespace teste
                                             Console.WriteLine("Digite novo nome de usuário: ");
                                             nomes[update] = Console.ReadLine();
                                             Console.WriteLine("\n\nAtualizado com sucesso!\n\n");
-                                        } 
+                                        }
                                     }
                                 }
                                 Console.WriteLine("1.Voltar ao menu\n0.Sair");
@@ -101,24 +108,27 @@ namespace teste
                                 break;
                             
                             case 4: // Inserir função delete
-                                Console.WriteLine("Qual ID deseja remover?");
-                                int id_remove = Convert.ToInt32(Console.ReadLine());
-                                /*if (id > 0)
+                                if(String.IsNullOrEmpty(nomes[1]))
                                 {
-                                    for (int i = 0; i < id; i++)
+                                    Console.WriteLine("Vazio!\n\n");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Qual ID deseja remover?");
+                                    int id_remove = Convert.ToInt32(Console.ReadLine());
+                                    for(int i = 1; i <= id_remove; i++)                                
                                     {
-                                        if (id == id_remove)
-                                        {
-                                            for (int j = i; j < id;j++)
-                                            {
-                                                //id[j] = id[j+1];
-                                            }
-                                        id--;
+                                        if(id[i] == id_remove)
+                                        {                                        
+                                            //int tamanho = nomes[i].Length;
+                                            nomes[i] = nomes[i].Remove(0); //bugado
+                                            //id[i] = ??
+                                            Console.WriteLine("Removido com sucesso!!");
                                         }
                                     }
-                                }*/
-                                Console.WriteLine("1.Voltar o menu\n0.Sair");
-                                n = Convert.ToInt32(Console.ReadLine());
+                                    Console.WriteLine("1.Voltar o menu\n0.Sair");
+                                    n = Convert.ToInt32(Console.ReadLine());
+                                }
                                 break;
 
                             default:

@@ -43,7 +43,6 @@ namespace teste
                         switch(n)
                         {
                             case 1: // Inserir função CREATE
-
                                 Console.WriteLine("Digite o nome de Usuário");
                                 if (cont < 5)
                                 {
@@ -53,7 +52,7 @@ namespace teste
                                 }
                             break;
 
-                            case 2: // Inserir função READ (Consulta)   
+                            case 2: // Inserir como função READ (Consulta)   
                                 if(String.IsNullOrEmpty(nomes[1]))
                                 {
                                     Console.WriteLine("Vazio!\n\n");
@@ -69,7 +68,7 @@ namespace teste
                                     n = Convert.ToInt32(Console.ReadLine());
                                     break;
                             
-                            case 3: // Inserir função update
+                            case 3: // Inserir como função update
                                 if(String.IsNullOrEmpty(nomes[1]))
                                 {
                                     Console.WriteLine("Vazio!\n\n");
@@ -78,7 +77,7 @@ namespace teste
                                 {
                                     Console.WriteLine("Qual id deseja atualizar?");
                                     int update = Convert.ToInt32(Console.ReadLine());
-                                    for(int i = 1; i <= update; i++)
+                                    /*for(int i = 1; i <= update; i++)
                                     {
                                         if(id[i] == update)
                                         {
@@ -86,6 +85,15 @@ namespace teste
                                             nomes[update] = Console.ReadLine();
                                             Console.WriteLine("\n\nAtualizado com sucesso!\n\n");
                                         }
+                                    }*/
+                                    for(int i = 0; i < nomes.Length; i++)
+                                    {
+                                        if(id[i] == update)
+                                        {
+                                            Console.WriteLine("Digite novo nome de usuário: ");
+                                            nomes[update] = Console.ReadLine();
+                                            Console.WriteLine("\n\nAtualizado com sucesso!\n\n");
+                                        } 
                                     }
                                 }
                                 Console.WriteLine("1.Voltar ao menu\n0.Sair");

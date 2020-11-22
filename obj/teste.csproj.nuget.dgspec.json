@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\Documents\\C#\\teste\\teste.csproj": {}
+    "C:\\Users\\rodri\\Documents\\C#\\prova\\teste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\Documents\\C#\\teste\\teste.csproj": {
+    "C:\\Users\\rodri\\Documents\\C#\\prova\\teste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\Documents\\C#\\teste\\teste.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\Documents\\C#\\prova\\teste.csproj",
         "projectName": "teste",
-        "projectPath": "C:\\Users\\rodri\\Documents\\C#\\teste\\teste.csproj",
+        "projectPath": "C:\\Users\\rodri\\Documents\\C#\\prova\\teste.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\Documents\\C#\\teste\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\Documents\\C#\\prova\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

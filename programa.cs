@@ -5,7 +5,7 @@ int user_code_target = 1234;
 int password_target = 9999;
 int op = 2;
 
-do
+do 
 {
     Console.WriteLine("Qual o código do usuário?");
     user_code = Convert.ToInt32(Console.ReadLine());
@@ -29,4 +29,4 @@ do
     {
         Console.WriteLine("Usuário inválido!");
     }
-}while(op != 0);
+}while(op != 0); 

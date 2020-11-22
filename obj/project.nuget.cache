@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "egL0QjMOCQ1v+zHtjx9lT/T1kaKPMMtV9yFSLhXK4NVdZDAisi5vUG9bX+frBHtHOHAhBWy2Aeg1DoH0QuU4rA==",
+=======
+  "dgSpecHash": "D7lq1UCKPRpEWpwk9IZrgxFv2ufLTqVnEQ7ORdzzEB2Qk0EGsb4ykCT1tgIlqOgJK825yagGg3YP+iDbDbI7rw==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Users\\rodri\\Documents\\C#\\prova\\teste.csproj",
   "expectedPackageFiles": [],
